@@ -1,0 +1,72 @@
+const C3 = self.C3;
+self.C3_GetObjectRefTable = function () {
+	return [
+		C3.Plugins.Tilemap,
+		C3.Behaviors.solid,
+		C3.Plugins.Sprite,
+		C3.Behaviors.TileMovement,
+		C3.Plugins.Keyboard,
+		C3.Plugins.Text,
+		C3.Plugins.Button,
+		C3.Plugins.System.Cnds.IsGroupActive,
+		C3.Plugins.Keyboard.Cnds.OnKey,
+		C3.Plugins.Sprite.Cnds.IsOverlappingOffset,
+		C3.Plugins.Sprite.Acts.SetAnim,
+		C3.Behaviors.TileMovement.Acts.SimulateControl,
+		C3.Behaviors.solid.Acts.SetEnabled,
+		C3.Plugins.System.Acts.AddVar,
+		C3.Plugins.System.Cnds.Else,
+		C3.Behaviors.TileMovement.Cnds.IsMoving,
+		C3.Plugins.Sprite.Cnds.IsOverlapping,
+		C3.Plugins.System.Cnds.Compare,
+		C3.Plugins.Sprite.Exps.PickedCount,
+		C3.Plugins.Sprite.Exps.Count,
+		C3.Plugins.System.Cnds.TriggerOnce,
+		C3.Plugins.System.Acts.Wait,
+		C3.Plugins.System.Acts.GoToLayoutByName,
+		C3.Plugins.System.Cnds.EveryTick,
+		C3.Plugins.Text.Acts.SetText,
+		C3.Plugins.System.Cnds.CompareVar,
+		C3.Plugins.System.Acts.GoToLayout,
+		C3.Plugins.Button.Cnds.OnClicked,
+		C3.Plugins.System.Cnds.OnLayoutStart,
+		C3.Plugins.System.Exps.layoutname,
+		C3.Plugins.System.Acts.SetVar
+	];
+};
+self.C3_JsPropNameTable = [
+	{Solid: 0},
+	{Wall: 0},
+	{Delivery_Point1: 0},
+	{TileMovement: 0},
+	{Player: 0},
+	{Box1: 0},
+	{Keyboard: 0},
+	{Title: 0},
+	{Start: 0},
+	{Delivery_Point2: 0},
+	{Box2: 0},
+	{MenuButton: 0},
+	{Reset: 0},
+	{Restart: 0},
+	{Step: 0},
+	{Level: 0},
+	{CurrentStep: 0},
+	{MaxStep: 0}
+];
+
+self.InstanceType = {
+	Wall: class extends self.ITilemapInstance {},
+	Delivery_Point1: class extends self.ISpriteInstance {},
+	Player: class extends self.ISpriteInstance {},
+	Box1: class extends self.ISpriteInstance {},
+	Keyboard: class extends self.IInstance {},
+	Title: class extends self.ITextInstance {},
+	Start: class extends self.IButtonInstance {},
+	Delivery_Point2: class extends self.ISpriteInstance {},
+	Box2: class extends self.ISpriteInstance {},
+	MenuButton: class extends self.IButtonInstance {},
+	Reset: class extends self.IButtonInstance {},
+	Restart: class extends self.IButtonInstance {},
+	Step: class extends self.ITextInstance {}
+}
